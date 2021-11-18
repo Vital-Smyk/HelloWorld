@@ -1,6 +1,6 @@
 def zad_1 ():
     print(l)
-    list = []
+    l = []
     n = int(input('Введите N(>2) : '))
     a = l.append(int(input('Введите значения A : ')) 
     b = l.append(int(input('Введите значения B : ')) 

@@ -12,3 +12,5 @@ def zad_1 ():
         print(l)    
     else:
         print('N<2! Повторите ввод!') 
+                 
+zad_1()

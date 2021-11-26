@@ -52,6 +52,5 @@ def game():
         os.system('cls')    
         print('Ты использовал все попытки! Игра окончена!')
         print ('Искомое слово : ', select_word)
-
-
+        
 game()

@@ -1,15 +1,12 @@
 import random
 import os
 
-word_list = {
-    'автомобиль': 'Это транспорт.' ,
-    'яблоко':'Это фрукт.', 
-    'учитель':'Это профессия', 
-    'береза':'Это фрукт.', 
-    'чупачупс':'Это сладость.', 
-    'гамбургер':'Это еда, фастфуд.',
-    'рука':'Это часть тела.' }
-
+word_list = {}
+with open('./words.txt','r') as file:
+    for line in file:
+        key, value = line.split(':')
+        word_list[key] = value
+ 
 def game():
     select_word = random.choice(list(word_list.keys()))
     help = word_list[select_word]
@@ -55,4 +52,6 @@ def game():
         print ('Искомое слово : ', select_word)
 
 
-game()
+if __name__ == '__main__':
+    game()
+

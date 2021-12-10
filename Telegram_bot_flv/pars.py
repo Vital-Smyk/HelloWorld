@@ -6,13 +6,10 @@ from const import SINOPTIK_URL
 def get_today_data():
     page = requests.get(SINOPTIK_URL)
     soup = BeautifulSoup(page.content,'html.parser')
-    today_temp = soup.find('div', attrs= {'class':'today-temp'})
+    today_temp = soup.find('p', attrs= {'class':'today-temp'})
     description = soup.find('div', attrs= {"class":"description"})
     if today_temp is not None and description is not None:
-        return {
-            today_temp.get_text(),
-            description.get_text()
-        }
+        return [today_temp.get_text(), description.get_text() ]
     return (None,None)
 
 
@@ -39,6 +36,6 @@ def get_week_data():
             data = False
             break
     if data :
-        return {day_1.get_text(),description_1,day_2.get_text(),description_2,day_3.get_text(),description_3,day_4.get_text(),description_4,day_5.get_text(),description_5,day_6.get_text(),description_6,day_7.get_text(),description_7 }
+        return [day_1.get_text(),description_1,day_2.get_text(),description_2,day_3.get_text(), description_3,day_4.get_text(),description_4,day_5.get_text(),description_5,day_6.get_text(),description_6,day_7.get_text(),description_7 ]
     else:
         return {None,None,None,None,None,None,None,None,None,None,None,None,None,None}

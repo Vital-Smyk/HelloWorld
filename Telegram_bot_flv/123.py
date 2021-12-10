@@ -52,8 +52,8 @@ def get_week_data():
             data = False
             break
     if data :
-        for i in [day_1.get_text(),description_1,day_2.get_text(),description_2,day_3.get_text(), description_3,day_4.get_text(),description_4,day_5.get_text(),description_5,            day_6.get_text(),description_6,day_7.get_text(),description_7 ]:
-            print (i)
+        return [day_1.get_text(),description_1,day_2.get_text(),description_2,day_3.get_text(), description_3,day_4.get_text(),description_4,day_5.get_text(),description_5,day_6.get_text(),description_6,day_7.get_text(),description_7 ]
+            
     else:
         return {None,None,None,None,None,None,None,None,None,None,None,None,None,None}
 

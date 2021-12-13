@@ -1,4 +1,4 @@
-import sys
+import sys, os.path
 BUFFER_SIZE = (1024**2)*5
 def file_encoding(in_file_name:str, in_encoding:str, out_file_name:str, out_encoding:str):
     with open(in_file_name,'r',encoding=in_encoding,buffering=BUFFER_SIZE) as file_in:
@@ -22,6 +22,8 @@ def main (arg):
     elif len (arg) > 5:
       print ("Ошибка. Слишком много параметров.")
       sys.exit (1)
+    elif not os.path.exists(arg[1]) :
+      print (f"Ошибка. Указаный файл '{arg[1]}' не найден.")
     else :
       file_encoding(*arg[1:])
 

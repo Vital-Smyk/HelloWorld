@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>  <title>Flask Auth Example</title></head>
+<body>
+    <div>
+        <a href="{{ url_for('index') }}"> Home </a>
+        <a href="{{ url_for('profile') }}">Profile</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('signup') }}">Sign Up</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
